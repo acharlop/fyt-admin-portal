@@ -1,16 +1,16 @@
 import {Box, Center, Flex, Heading, Link, Text} from '@chakra-ui/react'
 
 import Head from 'components/layout/Head'
-import LoginForm from 'components/forms/Login'
+import LoginForm from 'components/forms/LoginForm'
 import type {NextPage} from 'next'
 import ThemeToggle from 'components/ThemeToggle'
 
 const Home: NextPage = () => {
   return (
-    <div>
+    <>
       <Head />
 
-      <Center height='100vh'>
+      <Center h={{base: 'auto', md: '100vh'}} mt={{base: '5', md: '0'}}>
         <Box
           borderRadius='lg'
           shadow='lg'
@@ -40,7 +40,7 @@ const Home: NextPage = () => {
           </Flex>
         </Box>
       </Center>
-    </div>
+    </>
   )
 }
 
