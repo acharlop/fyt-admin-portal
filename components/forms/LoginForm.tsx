@@ -9,13 +9,16 @@ import {
 } from '@chakra-ui/react'
 
 import {EMAIL_REGEX} from 'contants/validation'
+import storage from 'utils/localstorage'
 import {useForm} from 'react-hook-form'
+import {useRouter} from 'next/router'
 
 interface FormData {
   email: string
 }
 
 const LoginForm = () => {
+  const router = useRouter()
   const {
     handleSubmit,
     register,
@@ -28,9 +31,10 @@ const LoginForm = () => {
   const onSubmit = (values: FormData): Promise<void> => {
     return new Promise((resolve) => {
       setTimeout(() => {
-        alert(JSON.stringify(values, null, 2))
+        storage.set('email', values.email)
+        router.replace('/')
         resolve()
-      }, 3000)
+      }, 1000)
     })
   }
 
