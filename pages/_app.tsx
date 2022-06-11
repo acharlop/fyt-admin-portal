@@ -1,20 +1,28 @@
-import '../styles/globals.css'
+import 'styles/globals.css'
 
-import type {AppProps} from 'next/app'
 import {ChakraProvider} from '@chakra-ui/react'
-import theme from 'styles/theme'
-import useAuth from 'hooks/auth'
+import type {AppProps} from 'next/app'
+import {Fragment} from 'react'
 
-function MyApp({Component, pageProps}: AppProps) {
+import FullPageLoader from '~components/FullPageLoader'
+import useAuth from '~hooks/auth'
+import Layout from '~layout/Layout'
+import theme from '~styles/theme'
+
+const MyApp = ({Component, pageProps}: AppProps) => {
   const {isLoading, isAuth} = useAuth()
 
   if (isLoading && !isAuth) {
-    return <div>loading</div>
+    return <FullPageLoader />
   }
+
+  const Wrapper = isAuth ? Layout : Fragment
 
   return (
     <ChakraProvider theme={theme}>
-      <Component {...pageProps} />
+      <Wrapper>
+        <Component {...pageProps} />
+      </Wrapper>
     </ChakraProvider>
   )
 }

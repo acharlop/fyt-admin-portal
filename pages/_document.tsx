@@ -1,6 +1,4 @@
-// pages/_document.js
-
-import {CSSReset, ColorModeScript} from '@chakra-ui/react'
+import {ColorModeScript, CSSReset} from '@chakra-ui/react'
 import NextDocument, {
   DocumentContext,
   Head,
@@ -9,7 +7,7 @@ import NextDocument, {
   NextScript,
 } from 'next/document'
 
-import theme from 'styles/theme'
+import theme from '~styles/theme'
 
 export default class Document extends NextDocument {
   static async getInitialProps(ctx: DocumentContext) {
