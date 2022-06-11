@@ -11,9 +11,8 @@ import {
   Thead,
   Tr,
 } from '@chakra-ui/react'
-import {useViewportScroll} from 'framer-motion'
 import type {NextPage} from 'next'
-import {useEffect, useRef, useState} from 'react'
+import {useState} from 'react'
 
 const mockPrompts = Array.from({length: 90}, (_, i) => `Prompt for day ${i}`)
 

@@ -1,6 +1,4 @@
-import {Badge, Grid, GridItem, Heading, Icon, Tooltip} from '@chakra-ui/react'
-import {InformationCircleIcon} from '@heroicons/react/solid'
-import {useRouter} from 'next/router'
+import {Grid, GridItem} from '@chakra-ui/react'
 import {PropsWithChildren} from 'react'
 
 import Footer from './Footer'

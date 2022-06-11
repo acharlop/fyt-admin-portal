@@ -1,7 +1,6 @@
-import {useEffect, useState} from 'react'
-
-import storage from 'utils/localstorage'
 import {useRouter} from 'next/router'
+import {useEffect, useState} from 'react'
+import storage from 'utils/localstorage'
 
 const useAuth = () => {
   const router = useRouter()

@@ -7,11 +7,11 @@ import {
   FormLabel,
   Input,
 } from '@chakra-ui/react'
-
-import {EMAIL_REGEX} from 'contants/validation'
-import storage from 'utils/localstorage'
-import {useForm} from 'react-hook-form'
 import {useRouter} from 'next/router'
+import {useForm} from 'react-hook-form'
+import storage from 'utils/localstorage'
+
+import {EMAIL_REGEX} from '~constants/validation'
 
 interface FormData {
   email: string
@@ -28,15 +28,14 @@ const LoginForm = () => {
     reValidateMode: 'onChange',
   })
 
-  const onSubmit = (values: FormData): Promise<void> => {
-    return new Promise((resolve) => {
+  const onSubmit = (values: FormData): Promise<void> =>
+    new Promise((resolve) => {
       setTimeout(() => {
         storage.set('email', values.email)
         router.replace('/')
         resolve()
       }, 1000)
     })
-  }
 
   const hasError = !!errors?.email
 

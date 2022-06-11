@@ -8,7 +8,7 @@ import useAuth from '~hooks/auth'
 import Layout from '~layout/Layout'
 import theme from '~styles/theme'
 
-function MyApp({Component, pageProps}: AppProps) {
+const MyApp = ({Component, pageProps}: AppProps) => {
   const {isLoading, isAuth} = useAuth()
 
   if (isLoading && !isAuth) {

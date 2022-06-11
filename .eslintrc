@@ -1,13 +1,4 @@
 {
-  "plugins": ["@typescript-eslint", "simple-import-sort"],
-  "extends": [
-    "next/core-web-vitals",
-    "plugin:@typescript-eslint/recommended",
-    "prettier"
-  ],
-  "parserOptions": {
-    "sourceType": "module"
-  },
   "rules": {
     "@typescript-eslint/no-unused-vars": "error",
     "@typescript-eslint/no-explicit-any": "error",
@@ -16,6 +7,42 @@
     "simple-import-sort/exports": "error",
     "import/first": "error",
     "import/newline-after-import": "error",
-    "import/no-duplicates": "error"
+    "import/no-duplicates": "error",
+    "@typescript-eslint/object-curly-spacing": "off",
+    "@typescript-eslint/semi": "off",
+    "jsx-quotes": ["error", "prefer-single"],
+    "react/function-component-definition": [
+      2,
+      {"namedComponents": "arrow-function"}
+    ]
+  },
+  "parser": "@typescript-eslint/parser",
+  "plugins": [
+    "@typescript-eslint",
+    "simple-import-sort",
+    "react",
+    "prettier",
+    "react-hooks"
+  ],
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended",
+    "airbnb/hooks",
+    "airbnb-typescript",
+    "next"
+  ],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": "latest",
+    "sourceType": "module",
+    "project": "tsconfig.json"
+  },
+  "env": {
+    "browser": true,
+    "es2021": true
   }
 }
