@@ -9,8 +9,7 @@ import {
 import type {NextPage} from 'next'
 
 import Table, {TH} from '~components/Table'
-
-const mockPrompts = Array.from({length: 90}, (_, i) => `Prompt for day ${i}`)
+import {mockPrompts} from '~utils/mock'
 
 const headers: TH[] = [{w: 20, text: 'Day #'}, 'Journal Prompt']
 
@@ -23,7 +22,7 @@ const Journal: NextPage = () => {
         After that they can only be edited for upcoming tribes.
       </Text>
       <Table headers={headers}>
-        {mockPrompts.map((prompt, i) => (
+        {mockPrompts().map((prompt, i) => (
           <Tr key={i}>
             <Td>{i + 1}</Td>
             <Td fontWeight='normal'>
