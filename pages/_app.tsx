@@ -1,9 +1,12 @@
-import '../styles/globals.css'
+import 'styles/globals.css'
 
-import type {AppProps} from 'next/app'
 import {ChakraProvider} from '@chakra-ui/react'
-import theme from 'styles/theme'
-import useAuth from 'hooks/auth'
+import type {AppProps} from 'next/app'
+import {Fragment} from 'react'
+
+import useAuth from '~hooks/auth'
+import Layout from '~layout/Layout'
+import theme from '~styles/theme'
 
 function MyApp({Component, pageProps}: AppProps) {
   const {isLoading, isAuth} = useAuth()
@@ -12,9 +15,13 @@ function MyApp({Component, pageProps}: AppProps) {
     return <div>loading</div>
   }
 
+  const Wrapper = isAuth ? Layout : Fragment
+
   return (
     <ChakraProvider theme={theme}>
-      <Component {...pageProps} />
+      <Wrapper>
+        <Component {...pageProps} />
+      </Wrapper>
     </ChakraProvider>
   )
 }

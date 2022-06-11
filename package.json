@@ -13,6 +13,7 @@
     "@chakra-ui/react": "^2.1.2",
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
+    "@heroicons/react": "^1.0.6",
     "framer-motion": "^6",
     "next": "12.1.6",
     "react": "18.1.0",
@@ -27,6 +28,7 @@
     "eslint": "8.16.0",
     "eslint-config-next": "12.1.6",
     "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-simple-import-sort": "^7.0.0",
     "prettier": "^2.6.2",
     "typescript": "4.7.2"
   }

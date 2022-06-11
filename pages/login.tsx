@@ -1,9 +1,8 @@
 import {Box, Center, Flex, Heading, Link, Text} from '@chakra-ui/react'
-
-import Head from 'components/layout/Head'
-import LoginForm from 'components/forms/LoginForm'
 import type {NextPage} from 'next'
-import ThemeToggle from 'components/ThemeToggle'
+
+import LoginForm from '~components/forms/LoginForm'
+import Head from '~layout/Head'
 
 const Home: NextPage = () => {
   return (
@@ -19,8 +18,6 @@ const Home: NextPage = () => {
           bg='white'
           color='gray.500'
         >
-          <ThemeToggle />
-
           <Flex gap='5' direction='column'>
             <Heading as='h1' size='xl'>
               FYT Admin panel
