@@ -1,8 +1,11 @@
-import {Grid, GridItem} from '@chakra-ui/react'
+import {Badge, Grid, GridItem, Heading, Icon, Tooltip} from '@chakra-ui/react'
+import {InformationCircleIcon} from '@heroicons/react/solid'
+import {useRouter} from 'next/router'
 import {PropsWithChildren} from 'react'
 
 import Footer from './Footer'
 import Header from './Header'
+import PageTitle from './PageTitle'
 import Sidebar from './Sidebar'
 
 const templateAreas = `
@@ -26,7 +29,15 @@ const Layout = ({children}: PropsWithChildren<unknown>) => {
       <GridItem p='4' area='nav' as='nav'>
         <Sidebar />
       </GridItem>
-      <GridItem p='4' area='main' as='main' overflowY='scroll'>
+      <GridItem
+        py='2'
+        px='4'
+        area='main'
+        as='main'
+        overflowY='scroll'
+        // border='1px solid white'
+      >
+        <PageTitle />
         {children}
       </GridItem>
       <GridItem p='4' area='footer' as='footer'>
